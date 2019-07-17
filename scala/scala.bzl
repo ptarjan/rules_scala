@@ -227,6 +227,7 @@ scala_library = rule(
     toolchains = ["@io_bazel_rules_scala//scala:toolchain_type"],
     implementation = _scala_library_impl,
 )
+print(scala_library)
 
 # the scala compiler plugin used for dependency analysis is compiled using `scala_library`.
 # in order to avoid cyclic dependencies `scala_library_for_plugin_bootstrapping` was created for this purpose,
