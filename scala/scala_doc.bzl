@@ -93,7 +93,7 @@ scala_doc = rule(
         ),
         "scalacopts": attr.string_list(),
         "_scaladoc": attr.label(
-            cfg = "host",
+            cfg = "target",
             executable = True,
             default = Label("//src/scala/io/bazel/rules_scala/scaladoc_support:scaladoc_generator"),
         ),

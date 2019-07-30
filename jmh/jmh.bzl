@@ -110,7 +110,7 @@ scala_generate_benchmark = rule(
         ),
         "_generator": attr.label(
             executable = True,
-            cfg = "host",
+            cfg = "target",
             default = Label(
                 "//src/scala/io/bazel/rules_scala/jmh_support:benchmark_generator",
             ),

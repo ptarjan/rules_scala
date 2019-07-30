@@ -31,7 +31,7 @@ scala_proto_toolchain = rule(
         "blacklisted_protos": attr.label_list(default=[]),
         "code_generator": attr.label(
             executable = True,
-            cfg = "host",
+            cfg = "target",
             default = Label("@io_bazel_rules_scala//src/scala/scripts:scalapb_generator"),
             allow_files=True
         ),

@@ -46,13 +46,13 @@ _launcher_template = {
 _implicit_deps = {
     "_singlejar": attr.label(
         executable = True,
-        cfg = "host",
+        cfg = "target",
         default = Label("@bazel_tools//tools/jdk:singlejar"),
         allow_files = True,
     ),
     "_zipper": attr.label(
         executable = True,
-        cfg = "host",
+        cfg = "target",
         default = Label("@bazel_tools//tools/zip:zipper"),
         allow_files = True,
     ),
@@ -61,7 +61,6 @@ _implicit_deps = {
     ),
     "_host_javabase": attr.label(
         default = Label("@bazel_tools//tools/jdk:current_java_runtime"),
-        cfg = "host",
     ),
     "_java_runtime": attr.label(
         default = Label("@bazel_tools//tools/jdk:current_java_runtime"),
@@ -73,7 +72,7 @@ _implicit_deps = {
     ),
     "_exe": attr.label(
         executable = True,
-        cfg = "host",
+        cfg = "target",
         default = Label("@io_bazel_rules_scala//src/java/io/bazel/rulesscala/exe:exe"),
     ),
 }
@@ -190,7 +189,7 @@ _common_attrs.update({
         default = "@io_bazel_rules_scala//src/java/io/bazel/rulesscala/coverage/instrumenter",
         allow_files = True,
         executable = True,
-        cfg = "host",
+        cfg = "target",
     ),
 })
 
@@ -322,7 +321,6 @@ _scala_test_attrs = {
         ),
     ),
     "_scalatest_runner": attr.label(
-        cfg = "host",
         default = Label("//src/java/io/bazel/rulesscala/scala_test:runner"),
     ),
     "_scalatest_reporter": attr.label(
